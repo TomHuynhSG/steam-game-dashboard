@@ -1,0 +1,9 @@
+# Environment variables
+.env
+
+# Cache file
+game_cache.json
+
+# Python cache
+__pycache__/
+*.pyc
