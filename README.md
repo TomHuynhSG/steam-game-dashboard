@@ -131,6 +131,23 @@ Double-clicking this shortcut will start the server and automatically open the d
     - **SteamGridDB API:** Used as a fallback for fetching high-quality game covers.
 - **Caching:** A local `game_cache.json` file is used to persist all fetched data, minimizing API calls and ensuring fast load times.
 
+## Fallback Behavior and Data Resilience
+
+The dashboard is built to be highly resilient and provide a useful experience even when perfect data isn't available. It uses a multi-layered fallback system:
+
+1.  **Game Name Cleaning:** The script first cleans your folder/file names, removing version numbers and tags (e.g., `[Repack]`) to create a clean name for API lookups.
+
+2.  **Steam App ID Matching:** It uses a fuzzy-matching algorithm to find the correct Steam App ID for a game, successfully matching names like "Alan Wake 2" to the official "Alan Wake II".
+
+3.  **Cover Image Sourcing:**
+    *   **Primary:** Attempts to fetch the official header image directly from Steam.
+    *   **Secondary:** If that fails, it searches for a high-quality cover on **SteamGridDB**.
+    *   **Final Fallback:** If no online cover is found, it assigns a local default cover image, ensuring every game has a visual representation.
+
+4.  **Graceful Metadata Handling:** If a game cannot be matched on Steam, all its metadata fields (reviews, release date, description, etc.) are populated with sensible defaults like "N/A" or "No User Reviews".
+
+5.  **Smart URL Generation:** If a Steam store page can't be found, the link will intelligently redirect to a Google search for the game's name, so you can always find more information with a single click.
+
 ## Architecture Diagram
 
 ```mermaid
