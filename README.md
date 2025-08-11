@@ -153,7 +153,7 @@ The dashboard is built to be highly resilient and provide a useful experience ev
 ```mermaid
 graph TD
     subgraph Your Computer
-        A[Game Library Folder] -->|Scans| B(game_dashboard.py);
+        B(game_dashboard.py) -->|Scans| A[Game Library Folder];
         B -->|Updates| C(game_cache.json);
         B -->|Serves| D{Flask Web Server};
     end
