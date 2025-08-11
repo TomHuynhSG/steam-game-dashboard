@@ -30,6 +30,18 @@ This project is a web-based dashboard that scans a local directory of PC games, 
     - **"Install" Button:** For games stored in folders, the script finds the main `.exe` and provides an "Install" button to launch it directly from the dashboard.
 - **Portable "Cache-Only" Mode:** A special launch flag allows you to run the dashboard on any computer without access to the original game directory, making your library browsable on the go.
 
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/screenshot-1.png" alt="Screenshot 1" width="80%">
+</p>
+<p align="center">
+  <img src="screenshots/screenshot-2.png" alt="Screenshot 2" width="80%">
+</p>
+<p align="center">
+  <img src="screenshots/screenshot-3.png" alt="Screenshot 3" width="80%">
+</p>
+
 ## How to Use
 
 ### Prerequisites
@@ -143,3 +155,7 @@ graph TD
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style C fill:#ccf,stroke:#333,stroke-width:2px
 ```
+
+## 🏆 Author
+
+Huynh Nguyen Minh Thong (Tom Huynh) - tomhuynhsg@gmail.com
